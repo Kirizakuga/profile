@@ -1,0 +1,106 @@
+.body{
+    background-color: #d8d2c3;
+}
+ul {
+    display: flex;
+    justify-content: space-between; /* Pushes Sun left and Colon right */
+    align-items: center;            /* Centers items vertically */
+    list-style: none;
+    padding: 0 20px;                /* Adds a little space from the screen edges */
+    position: relative;             /* Essential for centering Home */
+    background-color:#cdc0af;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* CHANGE .home TO #home because you used id="home" in HTML */
+#home {
+    position: absolute;             /* Takes Home out of the layout flow */
+    left: 50%;                      /* Moves it to the middle */
+    transform: translateX(-50%);    /* Centers it perfectly */
+    font-weight: bold;
+    color: #8b6f5c;
+    font-family: "Fira Code", monospace;
+    font-size: 1.35em;
+}
+#darkMode button{
+    padding: 5px 5px;;
+    background-color: #8b6f5c;
+    border-radius: 5px;
+    color: #d8d2c3;
+    border: none;
+    cursor: pointer;
+    font-family: "Fira Code", monospace;
+    transition: background-color 0.3s;
+}   
+#darkMode button:hover{
+    background-color: #d8d2c3;
+    color: #8b6f5c;
+}
+#prof-pcis{
+    text-align: center;
+    width: 450px;
+    height: 450px;          /* On small phone screens, it takes up 90% of space */
+    margin: 30px 20px;   /* 30px top/bottom space, 'auto' centers it left/right */
+    
+    /* Keep your existing styling (background, padding, etc.) */
+    background-color: #cdc0af;
+    padding: 20px;
+    border-radius: 15px; /* Adds rounded corners to look smoother */
+}
+#main-content{    max-width: 6000px;    /* Stops it from getting wider than 600px */
+    width: 70%;
+    height: fit-content;          /* On small phone screens, it takes up 90% of space */
+    margin: 30px 20px;   /* 30px top/bottom space, 'auto' centers it left/right */
+    
+    /* Keep your existing styling (background, padding, etc.) */
+    background-color: #cdc0af  ;
+    font-family: "Fira Code", monospace;
+    font-size: large    ;
+    padding: 40px 60px ;
+    border-radius: 15px; /* Adds rounded corners to look smoother */
+}
+.content-wrapper {
+    display: flex;           /* This enables the side-by-side layout */ /* Centers both blocks in the middle of the screen */
+    gap: 40px;               /* Adds space between the Profile and Main Content */
+    align-items: flex-start; /* Aligns them at the top edge */
+    margin-top: 30px;        /* Adds some space below the Navbar */
+}
+.file-name{
+    font-family: "Fira Code", monospace;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #8b6f5c; /* Ivory Text */
+    margin-bottom: 10px;    
+}
+.code-lines {
+    color: #8b6f5c; /* Ivory Text */
+    padding: 20px 20px 20px 40px; /* Left padding makes room for numbers */
+    margin: 0;
+    list-style: decimal; /* Triggers the numbers 1, 2, 3... */
+}
+#profile-pic {
+    width:300px;
+    height: auto;
+    border-radius: 10px; /* Slightly rounded corners for a smoother look */
+    border: 2px solid #8b6f5c; /* Adds a subtle border to make the image stand out */
+}
+#profile-name {
+    margin-top: 15px;
+    font-family: "Fira Code", monospace;
+    font-size: 1.5em;
+    color: #8b6f5c; /* Ivory Text */
+    font-weight: bold;
+}
+
+/* 6. Line Numbers Styling */
+.code-lines li::marker {
+    color: #8b6f5c; /* Dim green for line numbers so they aren't distracting */
+}
+
+/* 7. Syntax Highlighting Colors */
+.keyword { color: #cc5500; font-weight: bold; } /* Burnt Orange */
+.string { color: #38a023; }  /* Clay/Almond */
+.number { color: #293c92; }  /* Sage Green */
+.variable { color: #b718bd; } /* Gold */
+.contacts { color: #94471b; } /* Gold */
