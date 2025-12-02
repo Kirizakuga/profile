@@ -62,7 +62,7 @@ ul {
 }
 .content-wrapper {
     display: flex;           /* This enables the side-by-side layout */ /* Centers both blocks in the middle of the screen */
-    gap: 40px;               /* Adds space between the Profile and Main Content */
+    gap: 20px;               /* Adds space between the Profile and Main Content */
     align-items: flex-start; /* Aligns them at the top edge */
     margin-top: 30px;        /* Adds some space below the Navbar */
 }
@@ -104,3 +104,11 @@ ul {
 .number { color: #293c92; }  /* Sage Green */
 .variable { color: #b718bd; } /* Gold */
 .contacts { color: #94471b; } /* Gold */
+
+#contact img{
+    width: 40px;
+    height: auto;
+    display: inline-block;
+    margin-top: 15px;
+    margin: 0 10px;
+}
