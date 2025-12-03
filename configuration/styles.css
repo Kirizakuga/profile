@@ -1,114 +1,178 @@
-.body{
-    background-color: #d8d2c3;
+body {
+    background-color: var(--bg-color);
+    margin: 0;
+    font-family: "Fira Code", monospace; /* Applied globally to be safe */
+    transition: background-color var(--ripple-speed);
 }
-ul {
-    display: flex;
-    justify-content: space-between; /* Pushes Sun left and Colon right */
-    align-items: center;            /* Centers items vertically */
-    list-style: none;
-    padding: 0 20px;                /* Adds a little space from the screen edges */
-    position: relative;             /* Essential for centering Home */
-    background-color:#cdc0af;
-    padding: 10px 20px;
-    border-radius: 5px;
+:root {
+    /* LIGHT MODE (Default - Your original colors) */
+    --bg-color: #d8d2c3;
+    --box-bg: #cdc0af;
+    --text-main: #8b6f5c;
+    --text-highlight: #cc5500; /* Burnt Orange */
+    --string-color: #38a023;
+    --number-color: #293c92;
+    --variable-color: #b718bd;
+    --contact-color: #94471b;
+    
+    /* Animation Speed */
+    --ripple-speed: 0.6s;
 }
+body.dark-mode {
+    --bg-color: #323437;       /* Monkeytype Dark Grey */
+    --box-bg: #2c2e31;         /* Slightly darker for boxes */
+    --text-main: #d1d0c5;      /* Off-white text */
+    --text-highlight: #e2b714; /* Monkeytype Yellow */
+    --string-color: #38a023;   /* Red/Pink */
+    --number-color: #d1d0c5;
+    --variable-color: #8514e2;
+    --contact-color: #e2b714;
+}
+ul.navBar {
+    /* 1. Add space around the outside (Top/Bottom: 20px, Left/Right: 40px) */
+    /* This pushes the edges "away" from the screen border */
+    margin: 20px 40px; 
 
+    /* 2. Round the corners so it looks like a floating capsule */
+    border-radius: 15px;
+
+    /* 3. Keep your existing flex layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 10px 30px; /* Internal spacing */
+    background-color: var(--box-bg);
+    position: relative;
+    
+    /* Optional: Add a max-width so it doesn't get too wide on huge monitors */
+    max-width: 1800px; 
+    
+    /* Optional: Center the bar itself if you use max-width */
+    margin-left: auto;
+    margin-right: auto;
+    width: auto; /* Ensures it respects the margins */
+}
 /* CHANGE .home TO #home because you used id="home" in HTML */
 #home {
-    position: absolute;             /* Takes Home out of the layout flow */
-    left: 50%;                      /* Moves it to the middle */
-    transform: translateX(-50%);    /* Centers it perfectly */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-weight: bold;
-    color: #8b6f5c;
     font-family: "Fira Code", monospace;
     font-size: 1.35em;
+    color: var(--text-main);
 }
-#darkMode button{
-    padding: 5px 5px;;
-    background-color: #8b6f5c;
+#darkMode button {
+    padding: 5px 10px;
+    background-color: var(--text-main);
     border-radius: 5px;
-    color: #d8d2c3;
+    color: var(--bg-color); /* Contrast text against button */
     border: none;
     cursor: pointer;
     font-family: "Fira Code", monospace;
-    transition: background-color 0.3s;
-}   
-#darkMode button:hover{
-    background-color: #d8d2c3;
-    color: #8b6f5c;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    z-index: 100; /* Ensure it stays clickable */
 }
-#prof-pcis{
+#darkMode button:hover {
+    opacity: 0.8;
+}
+#prof-pcis {
     text-align: center;
     width: 450px;
-    height: 450px;          /* On small phone screens, it takes up 90% of space */
-    margin: 30px 20px;   /* 30px top/bottom space, 'auto' centers it left/right */
-    
-    /* Keep your existing styling (background, padding, etc.) */
-    background-color: #cdc0af;
-    padding: 20px;
-    border-radius: 15px; /* Adds rounded corners to look smoother */
+    height: auto;
+    margin: 0;                 /* Margin handled by wrapper gap/centering */
+    background-color: var(--box-bg);
+    padding: 20px;  
+    border-radius: 15px;
+    box-sizing: border-box;    /* Ensures padding doesn't expand width */
 }
-#main-content{    max-width: 6000px;    /* Stops it from getting wider than 600px */
+#main-content{    
+    max-width: 6000px;    /* Stops it from getting wider than 600px */
     width: 70%;
     height: fit-content;          /* On small phone screens, it takes up 90% of space */
     margin: 30px 20px;   /* 30px top/bottom space, 'auto' centers it left/right */
     
     /* Keep your existing styling (background, padding, etc.) */
-    background-color: #cdc0af  ;
+    background-color: var(--box-bg);
     font-family: "Fira Code", monospace;
     font-size: large    ;
     padding: 40px 60px ;
+    box-sizing: border-box;
     border-radius: 15px; /* Adds rounded corners to look smoother */
 }
 .content-wrapper {
-    display: flex;           /* This enables the side-by-side layout */ /* Centers both blocks in the middle of the screen */
-    gap: 20px;               /* Adds space between the Profile and Main Content */
-    align-items: flex-start; /* Aligns them at the top edge */
-    margin-top: 30px;        /* Adds some space below the Navbar */
+    display: flex;             /* VITAL: Puts Profile and Code side-by-side */
+    justify-content: center;   /* Centers the group on screen */
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 30px;
+    flex-wrap: wrap;           /* Allows stacking on mobile */
 }
-.file-name{
-    font-family: "Fira Code", monospace;
+.file-name {
     font-size: 1.2em;
     font-weight: bold;
-    color: #8b6f5c; /* Ivory Text */
-    margin-bottom: 10px;    
+    color: var(--text-main);
+    margin-bottom: 10px;
+    display: block;
 }
 .code-lines {
-    color: #8b6f5c; /* Ivory Text */
-    padding: 20px 20px 20px 40px; /* Left padding makes room for numbers */
+    color: var(--text-main);
+    padding: 20px 20px 20px 40px;
     margin: 0;
-    list-style: decimal; /* Triggers the numbers 1, 2, 3... */
+    list-style: decimal;
 }
 #profile-pic {
-    width:300px;
+    width: 300px;
     height: auto;
-    border-radius: 10px; /* Slightly rounded corners for a smoother look */
-    border: 2px solid #8b6f5c; /* Adds a subtle border to make the image stand out */
+    border-radius: 10px;
+    border: 2px solid var(--text-main);
 }
 #profile-name {
     margin-top: 15px;
-    font-family: "Fira Code", monospace;
     font-size: 1.5em;
-    color: #8b6f5c; /* Ivory Text */
+    color: var(--text-main);
     font-weight: bold;
 }
 
 /* 6. Line Numbers Styling */
 .code-lines li::marker {
-    color: #8b6f5c; /* Dim green for line numbers so they aren't distracting */
+    color: var(--text-main);
+    opacity: 0.6;
 }
 
 /* 7. Syntax Highlighting Colors */
-.keyword { color: #cc5500; font-weight: bold; } /* Burnt Orange */
-.string { color: #38a023; }  /* Clay/Almond */
-.number { color: #293c92; }  /* Sage Green */
-.variable { color: #b718bd; } /* Gold */
-.contacts { color: #94471b; } /* Gold */
+.keyword { color: var(--text-highlight); font-weight: bold; }
+.string { color: var(--string-color); }
+.number { color: var(--number-color); }
+.variable { color: var(--variable-color); }
+.contacts { color: var(--contact-color); }
 
-#contact img{
+#contact img {
     width: 40px;
     height: auto;
     display: inline-block;
-    margin-top: 15px;
-    margin: 0 10px;
+    margin: 15px 10px 0 10px;
+}
+.ripple-circle {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    pointer-events: none;
+    z-index: 999;
+    animation: ripple-expand var(--ripple-speed) ease-in forwards;
+}
+@keyframes ripple-expand {
+    to {
+        transform: scale(4); 
+    }
+}
+#darkmode{
+    padding: 5px 10px;
+    background-color: var(--text-main);
+}
+#line{
+    padding: 2px 2px 2px;
+    background-color:var(--bg-color);
 }
