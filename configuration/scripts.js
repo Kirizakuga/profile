@@ -1,45 +1,31 @@
 const toggleBtn = document.querySelector('#darkMode button');
 const body = document.body;
 
-toggleBtn.addEventListener('click', function (e) {
-    // 1. Get click coordinates relative to the viewport
+toggleBtn.addEventListener('click', async function (e) {
     const x = e.clientX;
     const y = e.clientY;
-
-    // 2. Create the ripple element
-    const ripple = document.createElement('div');
-    ripple.classList.add('ripple-circle');
-
-    // 3. Decide color: If we are currently Dark, ripple should be Light (and vice versa)
-    const isDark = body.classList.contains('dark-mode');
     
-    // HARDCODED COLORS matching the CSS variables for the ripple effect
-    // Light Mode Target Color: #d8d2c3
-    // Dark Mode Target Color: #323437
-    ripple.style.backgroundColor = isDark ? '#d8d2c3' : '#323437';
-
-    // 4. Position and Size the Ripple
-    // We make it large enough to cover the screen (max width/height)
-    const size = Math.max(window.innerWidth, window.innerHeight) * 2;
+    const maxDist = Math.max(
+        Math.hypot(x, y),
+        Math.hypot(window.innerWidth - x, y),
+        Math.hypot(x, window.innerHeight - y),
+        Math.hypot(window.innerWidth - x, window.innerHeight - y)
+    );
     
-    ripple.style.width = `${size}px`;
-    ripple.style.height = `${size}px`;
-    ripple.style.left = `${x - size / 2}px`;
-    ripple.style.top = `${y - size / 2}px`;
-
-    document.body.appendChild(ripple);
-
-    // 5. Trigger the Theme Swap halfway through or at end
-    setTimeout(() => {
+    // Set CSS custom properties for the animation
+    document.documentElement.style.setProperty('--click-x', `${x}px`);
+    document.documentElement.style.setProperty('--click-y', `${y}px`);
+    document.documentElement.style.setProperty('--max-radius', `${maxDist}px`);
+    
+    if (document.startViewTransition) {
+        // Modern browsers with View Transitions API
+        const transition = document.startViewTransition(() => {
+            body.classList.toggle('dark-mode');
+            toggleBtn.innerText = body.classList.contains('dark-mode') ? "moon" : "sun";
+        });
+    } else {
+        // Fallback for older browsers
         body.classList.toggle('dark-mode');
-        
-        // Update button text
         toggleBtn.innerText = body.classList.contains('dark-mode') ? "moon" : "sun";
-        
-    }, 400); // Swap classes halfway through animation (300ms)
-
-    // 6. Clean up the ripple element after animation finishes
-    setTimeout(() => {
-        ripple.remove();
-    }, 600);
+    }
 });
