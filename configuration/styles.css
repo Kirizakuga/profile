@@ -82,25 +82,24 @@ ul.navBar {
     text-align: center;
     width: 450px;
     height: auto;
-    margin: 0;                 /* Margin handled by wrapper gap/centering */
+    margin: 0;
     background-color: var(--box-bg);
     padding: 20px;  
     border-radius: 15px;
-    box-sizing: border-box;    /* Ensures padding doesn't expand width */
+    box-sizing: border-box;
 }
 #main-content{    
-    max-width: 6000px;    /* Stops it from getting wider than 600px */
+    max-width: 6000px;
     width: 70%;
-    height: fit-content;          /* On small phone screens, it takes up 90% of space */
-    margin: 30px 20px;   /* 30px top/bottom space, 'auto' centers it left/right */
-    
-    /* Keep your existing styling (background, padding, etc.) */
+    height: auto;
+    margin: 30px 20px;
     background-color: var(--box-bg);
     font-family: "Fira Code", monospace;
-    font-size: large    ;
-    padding: 40px 60px ;
+    font-size: large;
+    padding: 20px;
     box-sizing: border-box;
-    border-radius: 15px; /* Adds rounded corners to look smoother */
+    border-radius: 15px;
+    align-self: stretch;
 }
 .content-wrapper {
     display: flex;             /* VITAL: Puts Profile and Code side-by-side */
@@ -163,6 +162,15 @@ ul.navBar {
     display: inline-block;
     margin: 15px 10px 0 10px;
 }
+
+#github img {
+    transition: filter 0.3s;
+}
+
+body.dark-mode #github img {
+    filter: invert(1);
+}
+
 .ripple-circle {
     position: fixed;
     border-radius: 50%;
