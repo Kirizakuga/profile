@@ -1,7 +1,0 @@
-{
-  "projectId": "110903de-011f-4bce-a2f3-45158784783c",
-  "createdAt": 1765374543362,
-  "startupCommands": [
-    "node server.js"
-  ]
-}
