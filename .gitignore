@@ -1,2 +1,5 @@
-.orchids
+.env  
+node_modules/ 
+.idea/
 server.js
+tsconqfig.json

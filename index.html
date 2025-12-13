@@ -26,39 +26,66 @@
         </div>
     </div>
 
-    <div id="main-content" class="ide-window">
-    
-    <div class="ide-header">
-        <span class="file-name">profile.js</span>
+    <div class="right-content">
+        <div id="main-content" class="ide-window">
+          
+            <div class="ide-header">
+                <span class="file-name">profile.js</span>
+            </div>
+
+            <ol class="code-lines">
+                <li><span class="keyword">const</span> <span class="variable">user</span> = {</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;name: <span class="string">"kirikagura"</span>,</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;alternatives: [ <span class="string">"kirizakuga"</span>, <span class="string">"kaguya_kouu""</span>, <span class="string">"kouuin"</span> ]</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;age: <span class="number">18</span>,</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;role: <span class="string">"Student"</span>,</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;major: <span class="string">"Information Technology"</span>,</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;uni-status: <span class="string">"Freshman"</span>,</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;working/studying: <span class="string">"Post and Telecommunication Institute of Technology"</span>,</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;location: <span class="string">10050'51"N 106047'06"E, Ho Chi Minh, Vietnam</span>,</li>
+                <li>};</li>
+                <li><span class="keyword">let</span> <span class="variable">interest</span> =  {</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;os: [ <span class="string">"windows"</span>, <span class="string">"arch"</span>, <span class="string">"iOS"</span> ], </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;languages: [ <span class="string">"python"</span>, <span class="string">"HTML"</span>, <span class="string">"javascripts"</span>, <span class="string">"cpp"</span>, <span class="string">"css"</span> ]</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;frameworks: <span class="string">"reactjs"</span>,</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;contacts: [  </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="contacts">email</span>: <span class="string">"karusugi.kou@gmail.com"</span></li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="contacts">instagram</span>: <span class="string">"@lq.hieu.cloud"</span></li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="contacts">github</span>: <span class="string">"Kirizakuga"</span></li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;]</li>
+                <li>};</li>
+
+            </ol>
+          
+        </div>
+
+        <div class="split-container">
+            <div id="stats-overflow" class="ide-window">
+                <div class="ide-header">
+                    <span class="file-name">stats.js</span>
+                </div>
+                <ol class="code-lines">
+                    <li><span class="keyword">const</span> <span class="variable">contributions</span> = {</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;streak: <span class="number">0</span>,</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;total: <span class="number">0</span>,</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;thisYear: <span class="number">0</span></li>
+                    <li>};</li>
+                </ol>
+            </div>
+
+            <div id="wakatime-placeholder" class="ide-window">
+                <div class="ide-header">
+                    <span class="file-name">wakatime.js</span>
+                    <div class="heatmap-mode-selector">
+                        <button class="mode-btn active" data-mode="yearly">Yearly</button>
+                        <button class="mode-btn" data-mode="monthly">Monthly</button>
+                        <button class="mode-btn" data-mode="weekly">Weekly</button>
+                    </div>
+                </div>
+                <div id="heatmap-container"></div>
+            </div>
+        </div>
     </div>
-
-    <ol class="code-lines">
-        <li><span class="keyword">const</span> <span class="variable">user</span> = {</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;name: <span class="string">"kirikagura"</span>,</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;alternatives: [ <span class="string">"kirizakuga"</span>, <span class="string">"kaguya_kouu""</span>, <span class="string">"kouuin"</span> ]</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;age: <span class="number">18</span>,</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;role: <span class="string">"Student"</span>,</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;major: <span class="string">"Information Technology"</span>,</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;uni-status: <span class="string">"Freshman"</span>,</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;working/studying: <span class="string">"Post and Telecommunication Institute of Technology"</span>,</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;location: <span class="string">10050'51"N 106047'06"E, Ho Chi Minh, Vietnam</span>,</li>
-        <li>};</li>
-        <li><span class="keyword">let</span> <span class="variable">interest</span> =  {</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;os: [ <span class="string">"windows"</span>, <span class="string">"arch"</span>, <span class="string">"iOS"</span> ], </li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;languages: [ <span class="string">"python"</span>, <span class="string">"HTML"</span>, <span class="string">"javascripts"</span>, <span class="string">"cpp"</span>, <span class="string">"css"</span> ]</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;frameworks: <span class="string">"reactjs"</span>,</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;contacts: [  </li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="contacts">email</span>: <span class="string">"karusugi.kou@gmail.com"</span></li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="contacts">instagram</span>: <span class="string">"@lq.hieu.cloud"</span></li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="contacts">github</span>: <span class="string">"Kirizakuga"</span></li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;]</li>
-        
-        
-        <li>};</li>
-
-    </ol>
-    
-</div>
 
 </div>
 <script src="configuration/scripts.js"></script>
